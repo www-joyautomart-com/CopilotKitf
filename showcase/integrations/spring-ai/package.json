@@ -28,7 +28,7 @@
     "cmdk": "^0.2.1",
     "embla-carousel-react": "^8.6.0",
     "lucide-react": "^1.14.0",
-    "next": "^15.5.15",
+    "next": "^15.5.19",
     "openai": "^5.9.0",
     "radix-ui": "^1.4.3",
     "react": "^19.0.0",
@@ -45,7 +45,7 @@
     "@tailwindcss/postcss": "^4.0.0",
     "@types/node": "^22.0.0",
     "@types/react": "^19.0.0",
-    "postcss": "^8.5.0",
+    "postcss": "^8.5.16",
     "tailwindcss": "^4.0.0",
     "typescript": "^5.7.0"
   },
