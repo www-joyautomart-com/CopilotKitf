@@ -12,13 +12,48 @@ export const serviceNowApiHeaders = {
   "Content-Type": "application/json",
 };
 
+function sanitizeServiceNowPath(rawPath: string): string {
+  const withoutPrefix = rawPath.replace(/^\/api\/servicenow\/?/, "");
+  const segments = withoutPrefix.split("/").filter(Boolean);
+
+  const sanitizedSegments = segments.map((segment) => {
+    const decoded = decodeURIComponent(segment);
+
+    if (
+      decoded === "." ||
+      decoded === ".." ||
+      /%2f|%5c/i.test(segment) ||
+      !/^[A-Za-z0-9._-]+$/.test(decoded)
+    ) {
+      throw new Error("Invalid path segment");
+    }
+
+    return encodeURIComponent(decoded);
+  });
+
+  return sanitizedSegments.join("/");
+}
+
 async function handler(req: NextRequest) {
   const { method, url: stringUrl } = req;
   const url = new URL(stringUrl);
-  const path = url.pathname.replace(/\/api\/servicenow/, "");
   const query = Object.fromEntries(url.searchParams.entries());
 
-  const urlWithQuery = new URL(`${SERVICE_NOW_BASE_URL}/${path}`);
+  let safePath: string;
+  try {
+    safePath = sanitizeServiceNowPath(url.pathname);
+  } catch {
+    return new Response(JSON.stringify({ error: "Invalid path" }), {
+      status: 400,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  }
+
+  const urlWithQuery = new URL(
+    safePath ? `${SERVICE_NOW_BASE_URL}/${safePath}` : SERVICE_NOW_BASE_URL,
+  );
   Object.entries(query).forEach(([key, value]) =>
     urlWithQuery.searchParams.append(key, value),
   );
