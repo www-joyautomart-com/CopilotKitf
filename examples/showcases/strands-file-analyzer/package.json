@@ -19,7 +19,7 @@
     "@copilotkit/react-ui": "1.10.6",
     "@copilotkit/runtime": "1.10.6",
     "@tailwindcss/typography": "^0.5.19",
-    "next": "16.0.7",
+    "next": "16.2.11",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-markdown": "^10.1.0",
