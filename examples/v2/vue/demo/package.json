@@ -17,7 +17,7 @@
     "@copilotkit/voice": "workspace:*",
     "@copilotkit/vue": "workspace:*",
     "h3": "^1.15.4",
-    "hono": "^4.11.4",
+    "hono": "^4.13.5",
     "nuxt": "3.17.5",
     "openai": "^5.9.0",
     "rxjs": "7.8.1",
