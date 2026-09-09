@@ -21,7 +21,7 @@
     "chokidar": "^4.0.3",
     "commander": "^14.0.3",
     "croner": "^9.0.0",
-    "hono": "^4.6.0",
+    "hono": "^4.13.7",
     "js-yaml": "^4.1.0",
     "mustache": "^4.2.0",
     "playwright": "^1.59.1",
