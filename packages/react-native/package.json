@@ -89,7 +89,7 @@
     "react-dom": "^19.1.0",
     "tsdown": "^0.20.3",
     "typescript": "^5.8.3",
-    "vitest": "^3.2.4"
+    "vitest": "^3.2.6"
   },
   "peerDependencies": {
     "@gorhom/bottom-sheet": "^5.0.0",
