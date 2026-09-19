@@ -1,6 +1,6 @@
-pydantic-ai-slim[ag-ui,openai]==1.0.18
+pydantic-ai-slim[ag-ui,openai]==2.46.0
 ag-ui-protocol==0.1.18
-python-dotenv==1.0.1
+python-dotenv==1.2.2
 uvicorn==0.37.0
 fastapi>=0.115.0
 logfire>=4.10.0
